@@ -14,6 +14,8 @@ The broader research question is whether BNPL adoption improves merchant outcome
 
 - Affirm Apple Pay merchant list:  
   https://www.affirm.com/wallet/shopping/applepaymerchants
+- Klarna US store directory:
+  https://www.klarna.com/us/store/
 
 ## Main Script
 
@@ -23,6 +25,15 @@ This script:
 
 1. Opens the Affirm Apple Pay merchant page.
 2. Clicks "Load more" until no more merchants are available.
+3. Extracts merchant names and URLs.
+4. Saves the output as Excel and CSV files.
+
+- `scrape_klarna_us_stores.py`
+
+This script: 
+
+1. Opens the Klarna US store list page.
+2. Clicks "Load more" until no more merchants are avilable.
 3. Extracts merchant names and URLs.
 4. Saves the output as Excel and CSV files.
 
