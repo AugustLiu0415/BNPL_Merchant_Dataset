@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 import pandas as pd
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
-
+# Setup
 URL = "https://www.affirm.com/wallet/shopping/applepaymerchants"
 
 PROJECT_ROOT = Path(__file__).resolve().parent
