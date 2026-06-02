@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.DS_Store
+.ipynb_checkpoints/
+
+# Data outputs
+Data_Raw/
+Data_Clean/
+
+# Optional output files
+*.xlsx
+*.csv
+*.html

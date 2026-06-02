@@ -1,0 +1,45 @@
+# BNPL Merchant Dataset
+
+This project collects publicly available merchant-level information related to Buy Now, Pay Later (BNPL) adoption.
+
+The first scraper focuses on Affirm's Apple Pay merchant page and extracts merchant names and merchant links.
+
+## Research Motivation
+
+This project supports a merchant-level analysis of whether BNPL adoption is associated with changes in sales, revenue, and financial performance.
+
+The broader research question is whether BNPL adoption improves merchant outcomes through conversion lift, price discrimination, demand expansion, or other channels.
+
+## Current Data Source
+
+- Affirm Apple Pay merchant list:  
+  https://www.affirm.com/wallet/shopping/applepaymerchants
+
+## Main Script
+
+- `scrape_affirm_applepay_merchants.py`
+
+This script:
+
+1. Opens the Affirm Apple Pay merchant page.
+2. Clicks "Load more" until no more merchants are available.
+3. Extracts merchant names and URLs.
+4. Saves the output as Excel and CSV files.
+
+## Output
+
+The script generates output files in:
+
+- `Data_Raw/affirm_applepay_merchants.xlsx`
+- `Data_Raw/affirm_applepay_merchants.csv`
+- `Data_Raw/affirm_page_debug.html`
+
+These output files are not uploaded to GitHub by default.
+
+## Setup
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
