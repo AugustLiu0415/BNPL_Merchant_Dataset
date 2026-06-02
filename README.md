@@ -16,6 +16,9 @@ The broader research question is whether BNPL adoption improves merchant outcome
   https://www.affirm.com/wallet/shopping/applepaymerchants
 - Klarna US store directory:
   https://www.klarna.com/us/store/
+- Afterpay US store directory: 
+  https://www.afterpay.com/en-us/stores
+
 
 ## Main Script
 
@@ -36,6 +39,15 @@ This script:
 2. Clicks "Load more" until no more merchants are avilable.
 3. Extracts merchant names and URLs.
 4. Saves the output as Excel and CSV files.
+
+- `scrape_Afterpay_us_stores.py`
+
+This script: 
+
+1. Opens the Afterpay US store list page.
+2. clicks "Load more" until no more merchants are avilable.
+3. Extracts merchant names and URLs. 
+4. Saves the output as Excel and CSV files
 
 ## Output
 
