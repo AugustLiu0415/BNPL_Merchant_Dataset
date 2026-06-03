@@ -18,6 +18,9 @@ The broader research question is whether BNPL adoption improves merchant outcome
   https://www.klarna.com/us/store/
 - Afterpay US store directory: 
   https://www.afterpay.com/en-us/stores
+- Clearpay UK retailer pages:
+  https://www.clearpay.co.uk/en-GB/stores/retailer-pages
+
 
 
 ## Main Script
@@ -49,6 +52,11 @@ This script:
 3. Extracts merchant names and URLs. 
 4. Saves the output as Excel and CSV files
 
+-  `scrape_clearpay_uk_stores.py`  
+1. Opens the Clearpay UK store list page. 
+2. Extracts merchant names and URLs.
+3. Saves the output as Excel and CSV files.
+
 ## Output
 
 The script generates output files in:
@@ -56,6 +64,15 @@ The script generates output files in:
 - `Data_Raw/affirm_applepay_merchants.xlsx`
 - `Data_Raw/affirm_applepay_merchants.csv`
 - `Data_Raw/affirm_page_debug.html`
+- `Data_Raw/klarna_us_stores.xlsx`
+- `Data_Raw/klarna_us_stores.csv`
+- `Data_Raw/afterpay_us_stores.xlsx`
+- `Data_Raw/afterpay_us_stores.csv`
+- `Data_Raw/afterpay_page_debug.html`
+- `Data_Raw/clearpay_uk_retailer_pages.xlsx`
+- `Data_Raw/clearpay_uk_retailer_pages.csv`
+- `Data_Raw/clearpay_retailer_pages_debug.html`
+
 
 These output files are not uploaded to GitHub by default.
 
