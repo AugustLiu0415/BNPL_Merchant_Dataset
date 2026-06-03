@@ -52,7 +52,10 @@ This script:
 3. Extracts merchant names and URLs. 
 4. Saves the output as Excel and CSV files
 
--  `scrape_clearpay_uk_stores.py`  
+-  `scrape_clearpay_uk_stores.py` 
+
+This script: 
+
 1. Opens the Clearpay UK store list page. 
 2. Extracts merchant names and URLs.
 3. Saves the output as Excel and CSV files.
