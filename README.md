@@ -20,6 +20,8 @@ The broader research question is whether BNPL adoption improves merchant outcome
   https://www.afterpay.com/en-us/stores
 - Clearpay UK retailer pages:
   https://www.clearpay.co.uk/en-GB/stores/retailer-pages
+- Zip US retailer pages: 
+  https://zip.co/us/store/directory
 
 
 
@@ -39,7 +41,7 @@ This script:
 This script: 
 
 1. Opens the Klarna US store list page.
-2. Clicks "Load more" until no more merchants are avilable.
+2. Clicks "Load more" until no more merchants are available.
 3. Extracts merchant names and URLs.
 4. Saves the output as Excel and CSV files.
 
@@ -48,7 +50,7 @@ This script:
 This script: 
 
 1. Opens the Afterpay US store list page.
-2. clicks "Load more" until no more merchants are avilable.
+2. clicks "Load more" until no more merchants are available.
 3. Extracts merchant names and URLs. 
 4. Saves the output as Excel and CSV files
 
@@ -59,6 +61,15 @@ This script:
 1. Opens the Clearpay UK store list page. 
 2. Extracts merchant names and URLs.
 3. Saves the output as Excel and CSV files.
+
+- `scrape_zip_us_stores.py` 
+
+This script: 
+
+1. Opens the Zip US store list page. 
+2. Clicks "Load more" until no more merchantsd are available.
+3. Extracts merchant names and URLs.
+4. Saves the output as Excel and CSV files. 
 
 ## Output
 
@@ -75,6 +86,9 @@ The script generates output files in:
 - `Data_Raw/clearpay_uk_retailer_pages.xlsx`
 - `Data_Raw/clearpay_uk_retailer_pages.csv`
 - `Data_Raw/clearpay_retailer_pages_debug.html`
+- `Data_Raw/zip_page_debug.html`
+- `Data_Raw/zip_us_stores.csv`
+- `Data_Raw/zip_us_stores.xlsx`
 
 
 These output files are not uploaded to GitHub by default.
