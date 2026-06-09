@@ -11,3 +11,15 @@ Data_Clean/
 *.xlsx
 *.csv
 *.html
+
+# Generated classification outputs
+Data_Clean/*classified*.xlsx
+Data_Clean/*classified*.csv
+Data_Clean/*cache*.jsonl
+Data_Clean/*run_log*.csv
+Data_Clean/*full_run_log*.txt
+
+# Python / system
+__pycache__/
+*.pyc
+.DS_Store
