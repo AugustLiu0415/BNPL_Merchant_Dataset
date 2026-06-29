@@ -55,9 +55,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 DATA_CLEAN = PROJECT_ROOT / "Data_Clean"
 
 DEFAULT_INPUT = DATA_CLEAN / "bnpl_merchant_master_long.xlsx"
-DEFAULT_OUTPUT = DATA_CLEAN / "bnpl_merchant_master_web_only_classified_v7.xlsx"
+DEFAULT_OUTPUT = DATA_CLEAN / "bnpl_merchant_master_web_only_classified_v7_parse_safe.xlsx"
 DEFAULT_CACHE = DATA_CLEAN / "web_only_classification_v7_cache.jsonl"
-DEFAULT_LOG = DATA_CLEAN / "web_only_classification_v7_run_log.csv"
+DEFAULT_LOG = DATA_CLEAN / "web_only_classification_v7_parse_safe_run_log.csv"
 
 
 # ============================================================
@@ -1238,7 +1238,17 @@ def extract_page_evidence(html: str, base_url: str) -> dict[str, Any]:
     for a in soup.find_all("a", href=True):
         text = clean_text(a.get_text(" ", strip=True))
         href = clean_text(a.get("href"))
-        full_url = urljoin(base_url, href)
+
+        if not href:
+            continue
+
+        try:
+            full_url = urljoin(base_url or "", href)
+        except Exception:
+            # Some long-tail merchant pages contain malformed href values.
+            # Skip only the bad link instead of crashing the full classifier.
+            continue
+
         domain = get_domain(full_url)
 
         if text and 2 <= len(text) <= 80:
@@ -1248,7 +1258,11 @@ def extract_page_evidence(html: str, base_url: str) -> dict[str, Any]:
             if domain and base_domain and domain != base_domain and not is_bad_result_url(full_url):
                 external_links.append(full_url)
             if domain == base_domain:
-                path = urlparse(full_url).path.lower()
+                try:
+                    path = urlparse(full_url).path.lower()
+                except Exception:
+                    continue
+
                 if any(token in path for token in [
                     "shop", "collections", "collection", "category", "categories",
                     "products", "product", "men", "women", "kids", "shoes",
@@ -1355,7 +1369,11 @@ def discover_from_existing_urls(row: pd.Series, merchant_name: str, sleep: float
             time.sleep(sleep)
         if not ok:
             continue
-        ev = extract_page_evidence(html, final_url)
+        try:
+            ev = extract_page_evidence(html, final_url)
+        except Exception:
+            continue
+
         external_links = ev.get("external_links", [])
         if external_links:
             ranked = sorted(
