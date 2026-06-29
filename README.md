@@ -4,11 +4,57 @@ This project collects publicly available merchant-level information related to B
 
 The first scraper focuses on Affirm's Apple Pay merchant page and extracts merchant names and merchant links.
 
-## Research Motivation
+## Research Question and Hypotheses
 
-This project supports a merchant-level analysis of whether BNPL adoption is associated with changes in sales, revenue, and financial performance.
+This project studies BNPL adoption from a merchant-side perspective. While much of the existing BNPL literature focuses on consumer borrowing, liquidity constraints, and spending behavior, this project shifts attention to merchant outcomes.
 
-The broader research question is whether BNPL adoption improves merchant outcomes through conversion lift, price discrimination, demand expansion, or other channels.
+The central research question is:
+
+**Does BNPL adoption improve merchant performance, and is the effect different across merchant categories?**
+
+### H1: Revenue Growth Hypothesis
+
+BNPL adoption increases merchant revenue growth by improving checkout conversion and expanding access to credit-constrained consumers.
+
+The intuition is that BNPL reduces the immediate payment burden faced by consumers at checkout. This may increase purchase completion rates, average order value, or total sales, especially for discretionary retail categories.
+
+### H2: Profitability Hypothesis
+
+BNPL adoption improves merchant profitability only when incremental gross profit from new sales exceeds BNPL-related fee and substitution costs.
+
+This hypothesis recognizes that sales growth alone is not sufficient. BNPL providers often charge merchants higher fees than standard card payment rails. Therefore, BNPL may raise revenue but still reduce net profitability if the fee burden is too high or if existing customers simply switch from cheaper payment methods to BNPL.
+
+### H3: Industry Heterogeneity Hypothesis
+
+The BNPL effect is stronger in discretionary, high-ticket, high-margin, and e-commerce-intensive industries.
+
+BNPL is expected to matter more for categories where consumers are more likely to delay or abandon purchases because of liquidity constraints. Examples include apparel and fashion, beauty and personal care, electronics, sports and outdoor goods, home and furniture, and other discretionary retail sectors.
+
+### H4: Firm Size Hypothesis
+
+BNPL effects are more detectable among small- and mid-cap focused retailers than among large diversified merchants.
+
+For large diversified companies, BNPL may represent only a small part of total sales. For smaller or more focused merchants, BNPL adoption may have a more visible relationship with revenue growth, conversion, or customer acquisition.
+
+### H5: Dynamic Effect Hypothesis
+
+BNPL adoption produces a short-run sales boost, but long-run effects depend on whether BNPL generates repeat customers rather than merely pulling future demand forward.
+
+A short-run increase in sales may reflect true demand expansion, improved conversion, or intertemporal substitution. The long-run effect depends on whether BNPL creates persistent customer acquisition and repeat purchases, or simply shifts future purchases into the present.
+
+## Current Empirical Strategy
+
+The first stage of this project constructs a public merchant-level BNPL dataset from major BNPL provider directories, including Affirm, Klarna, Afterpay, Clearpay, and Zip.
+
+The dataset is used to document:
+
+1. Which merchants are listed by each BNPL provider;
+2. Which industries are most represented among BNPL-supported merchants;
+3. Which merchants appear across multiple BNPL platforms;
+4. Whether high-overlap merchants are concentrated in specific industries;
+5. Which BNPL-covered merchants can be linked to public-company financial data.
+
+The current dataset supports descriptive analysis and public-company candidate identification. Future work may add BNPL adoption timing and firm-level financial outcomes to study whether BNPL adoption is associated with changes in revenue growth, margins, or other merchant performance measures.
 
 ## Current Data Source
 

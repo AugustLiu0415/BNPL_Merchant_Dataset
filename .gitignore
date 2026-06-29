@@ -23,3 +23,49 @@ Data_Clean/*full_run_log*.txt
 __pycache__/
 *.pyc
 .DS_Store
+
+# Generated classification outputs
+Data_Clean/*classified*.csv
+Data_Clean/*cache*.jsonl
+Data_Clean/*run_log*.csv
+Data_Clean/*full_run_log*.txt
+
+# Ignore general generated Excel outputs
+Data_Clean/*classified*.xlsx
+Data_Clean/*overlap*.xlsx
+Data_Clean/*descriptive*.xlsx
+Data_Clean/*public_company*.xlsx
+
+# But keep final research-ready outputs
+!Data_Clean/final_outputs/
+!Data_Clean/final_outputs/*.xlsx
+
+# Python / system
+__pycache__/
+*.pyc
+.DS_Store
+
+# Ignore generated intermediate Excel outputs
+Data_Clean/*.xlsx
+Data_Clean/*.csv
+Data_Clean/*.jsonl
+Data_Clean/*.txt
+
+# Keep only final selected research outputs
+!Data_Clean/final_outputs/
+!Data_Clean/final_outputs/*.xlsx
+
+# Historical classifier drafts
+classify_merchants_from_web_only_calibrated_v2.py
+classify_merchants_from_web_only_calibrated_v3.py
+classify_merchants_from_web_only_calibrated_v4.py
+classify_merchants_from_web_only_calibrated_v5.py
+classify_merchants_from_web_only_calibrated_v6.py
+classify_merchants_from_web_only_revised.py
+full_official_web_verify.py
+full_official_web_verify_v3.py
+
+# Python / system
+__pycache__/
+*.pyc
+.DS_Store
