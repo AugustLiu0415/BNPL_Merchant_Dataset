@@ -14,6 +14,7 @@ Data_Clean/*
 !Data_Clean/final_outputs/*.csv
 
 # Large report archives and local caches should stay local.
+Analysis/BNPL_DiD_H1_H2/sec_cache/
 Data_Clean/Reports_SEC_2012_2026*/
 Data_Clean/financial_statement_cache_sec/
 Data_Clean/sec_report_archive_cache/

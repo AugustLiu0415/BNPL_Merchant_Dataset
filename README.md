@@ -59,9 +59,11 @@ Completed in this checkpoint:
 7. Added a manual override layer for brands whose listed financial statements
    belong to a public parent company rather than the merchant brand itself.
 
-Work after this checkpoint, including SEC financial statement extraction,
-adoption-date evidence search, and annual/quarterly report archiving, is being
-developed locally and is not part of this GitHub update yet.
+This checkpoint now also includes a first adoption-date and DiD-analysis layer:
+confirmed BNPL adoption evidence for the public-company sample, industry labels
+for confirmed adopters, SEC Companyfacts quarterly/annual financial panels, and
+first-pass H1/H2 outputs. See
+`Analysis/BNPL_DiD_H1_H2/`.
 
 ## Data Sources
 
@@ -92,6 +94,12 @@ candidates and are corrected through the manual override layer when needed.
 ├── classify_merchants_from_web_only_calibrated_v7_parse_safe.py
 ├── build_final_bnpl_overlap_tables.py
 ├── classify_merchants_public_listing_status.py
+├── Analysis/
+│   └── BNPL_DiD_H1_H2/
+│       ├── data/
+│       ├── outputs/
+│       ├── scripts/
+│       └── README.md
 ├── Data_Clean/
 │   └── final_outputs/
 │       ├── bnpl_merchant_master_long_labeled.xlsx
@@ -186,8 +194,36 @@ The curated checkpoint files currently tracked in Git are:
 - `Data_Clean/final_outputs/public_listing_manual_overrides.csv`
 
 These files support the current research checkpoint through public-company
-classification. Later financial-statement outputs are intentionally excluded from
-this GitHub checkpoint because they are larger and still being refined.
+classification.
+
+## Analysis Checkpoint: Adoption Dates and H1/H2 Panels
+
+The first merchant-performance analysis checkpoint is tracked under:
+
+```text
+Analysis/BNPL_DiD_H1_H2/
+```
+
+It includes:
+
+- confirmed public-company BNPL adoption-date evidence;
+- a confirmed adoption sample merged with existing industry/sub-industry labels;
+- SEC Companyfacts quarterly and annual financial panels;
+- first-pass H1/H2 baseline regression results;
+- first-pass H1/H2 baseline regression outputs.
+
+Key current counts:
+
+- 38 confirmed public-company adoption rows;
+- 23 direct-public, merchant-level main-sample rows;
+- 15 parent-level robustness rows;
+- 1,317 SEC firm-quarter observations for 25 matched firms;
+- 340 SEC firm-year observations for 25 matched firms.
+
+The baseline H1/H2 outputs are pipeline validation and exploratory estimates,
+not final causal DiD evidence. The next major research step is constructing
+matched never-adopter public-company controls and then applying a modern
+staggered-adoption DiD/event-study estimator.
 
 ## Setup
 
